@@ -4,6 +4,10 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+/**
+ * Suujiateクラス
+ * ３ケタの数字が生成され、その数字を聞いて予想していくゲーム
+ */
 public class Suujiate{
     /**
      * mainメソッド

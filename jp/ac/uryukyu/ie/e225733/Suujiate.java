@@ -5,6 +5,10 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Suujiate{
+    /**
+     * mainメソッド
+     * @param args
+     */
     public static void main(String[] args) {
         // コンピュータの答えをランダムに取得する。
         int comAnser = getComAnswer();
@@ -27,7 +31,11 @@ public class Suujiate{
         }
     }
      
-    // コンピュータの答えを返すメソッド
+    /**
+     * getComAnswerメソッド
+     * コンピュータの答えを返すメソッド
+     * @return １００〜９９９の中から書く桁の数字の重複なしの３桁の整数値を返す
+     */
     public static int getComAnswer() {
         // 作成した乱数を返す
 
@@ -49,7 +57,11 @@ public class Suujiate{
         }
     }
     
-    // キーボードから入力された数値(予想値)を返すメソッド
+    /**
+     * getUserGuessメソッド
+     * キーボードから入力された数値(予想値)を返すメソッド
+     * @return 読み込んだ整数を返す
+     */
     public static int getUserGuess() {
         int guess;
         // キーボードの準備
@@ -76,11 +88,17 @@ public class Suujiate{
                 stdin.next();
             }
         }
-        return guess; // 読み込んだ整数を返す
+        return guess;
     }
 
     
-    // 答えと予想値が一致するかどうかを判定するメソッド
+    /**
+     * isJudgeAnswerメソッド
+     * 答えと予想値が一致するかどうかを判定するメソッド
+     * @param com 整数値
+     * @param user 整数値
+     * @return 正解か不正解かを判断し、正解の時はtrue, 不正解の時はfalseを返す
+     */
     public static boolean isJudgeAnswer(int com, int user) {
         int Eat = isJudgeEat(com, user);
         int Bite = isJudgeBite(com, user);
@@ -99,7 +117,13 @@ public class Suujiate{
         }
     }
 
-    //Eatを判断するメソッド
+    /**
+     * isJudgeEatメソッド
+     * Eatを判断するメソッド
+     * @param com　整数値
+     * @param user 整数値
+     * @return Eatの数を数えて返す
+     */
     public static int isJudgeEat(int com, int user) {
         ArrayList<Integer> Eat_com = List_com(com);
         ArrayList<Integer> Eat_user = List_com(user);
@@ -117,7 +141,13 @@ public class Suujiate{
         return Count_Eat;
     }
 
-    //Biteを判断するメソッド
+    /**
+     * isJudgeBiteメソッド
+     * Biteを判断するメソッド
+     * @param com 整数値
+     * @param user 整数値
+     * @return Biteの数を数えて返す
+     */
     public static int isJudgeBite(int com, int user){
         ArrayList<Integer> Bite_com = List_com(com);
         ArrayList<Integer> Bite_user = List_com(user);
@@ -135,7 +165,12 @@ public class Suujiate{
         return Count_bite;
     }
 
-    //computerの数字の各桁をそれぞれリストに収納するメソッド
+    /**
+     * List_comメソッド
+     * computerの数字の各桁をそれぞれリストに収納するメソッド
+     * @param com 整数値
+     * @return computer がランダムに判断した数字の書く桁をリストに収納したものを返す
+     */
     public static ArrayList<Integer> List_com(int com){
         ArrayList<Integer> x = new ArrayList<>();
         String com_String = Integer.toString(com);
@@ -149,7 +184,12 @@ public class Suujiate{
         return x;
     }
 
-    //userの数字の各桁をそれぞれリストに収納するメソッド
+    /**
+     * List_userメソッド
+     * userの数字の各桁をそれぞれリストに収納するメソッド
+     * @param user 整数値
+     * @return ユーザーが予想した数字の各桁をリストに収納したものを返す
+     */
     public static ArrayList<Integer> List_user(int user){
         ArrayList<Integer> y = new ArrayList<>();    
         String user_String = Integer.toString(user);
